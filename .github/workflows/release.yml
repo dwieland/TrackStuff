@@ -1,9 +1,10 @@
 name: Release
-runs-on: self-hosted
+
 on:
   push:
     tags:
     - 'v*'
+
 jobs:
   build:
     runs-on: ubuntu-latest

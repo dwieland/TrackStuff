@@ -1,0 +1,11 @@
+## Interface: 30400
+## Title: TrackStuff
+## Notes: Automatically switch your tracking based on the selected target
+## Author: dwieland
+## Version: 0.1
+## SavedVariables: TrackStuffDB
+
+libs\embeds.xml
+static\embeds.xml
+localization\embeds.xml
+TrackStuff.lua

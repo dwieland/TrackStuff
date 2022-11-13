@@ -1,4 +1,4 @@
-name: Release
+name: Package and Release
 
 on:
   push:
@@ -6,33 +6,12 @@ on:
     - 'v*'
 
 jobs:
-  build:
+  release:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
-      uses: actions/checkout@master
-    - name: Create Release
-      id: create_release
-      uses: actions/create-release@v1
+      uses: actions/checkout@v2
       with:
-        draft: false
-        prerelease: false
-        release_name: ${{ github.ref }}
-        tag_name: ${{ github.ref }}
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-    - name: Build Package
-      uses: thedoctor0/zip-release@main
-      with:
-        type: 'zip'
-        filename: 'release.zip'
-        exclusions: '*.git*'
-    - name: Upload Artifact
-      uses: actions/upload-release-asset@v1
-      with:
-        upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: ./release.zip
-        asset_name: TrackStuff-wotlk.zip
-        asset_content_type: application/zip
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        fetch-depth: 0
+    - name: Package and Release
+      uses: BigWigsMods/packager@v2

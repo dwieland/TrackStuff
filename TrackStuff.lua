@@ -88,14 +88,14 @@ function addon:OnCombatLogEvent()
     if name ~= self.player then return end
     if event == "SPELL_AURA_APPLIED" then
         local trackingInfo = self:GetTrackingInfoBySpellId(spellId)
+        if not trackingInfo then return end
         self:SetIcon(trackingInfo.icon)
         return
     end
     if event == "SPELL_AURA_REMOVED" then
         local trackingInfo = self:GetTrackingInfoBySpellId(spellId)
-        if trackingInfo then
-            self:SetIcon(defaultIcon)
-        end
+        if not trackingInfo then return end
+        self:SetIcon(defaultIcon)
         return
     end
 end

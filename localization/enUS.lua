@@ -1,11 +1,6 @@
-local L = LibStub("AceLocale-3.0"):NewLocale("TrackFiends", "enUS", true)
+local L = LibStub("AceLocale-3.0"):NewLocale("TrackStuff", "enUS", true)
 if not L then return end
 
-L["Autotracking is %s"] = true
-L["ON"] = true
-L["OFF"] = true
-L["<Left Click> turns on tracking of hiddens"] = true
-L["<Right Click> turns autotracking ON/OFF"] = true
 L["trackables"] = {
     [Trackable.BEAST] = "Beast",
     [Trackable.DEMON] = "Demon",

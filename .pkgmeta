@@ -1,0 +1,15 @@
+package-as: TrackStuff
+
+ignore:
+  - .github
+  - .gitignore
+  
+tools-used:
+  - AceAddon-3.0
+  - AceDB-3.0
+  - AceEvent-3.0
+  - AceLocale-3.0
+  - CallbackHandler-1.0
+  - LibDataBroker-1.1
+  - LibDBIcon-1.0
+  - LibStub

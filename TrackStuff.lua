@@ -10,6 +10,13 @@ local dataObject = LibStub("LibDataBroker-1.1"):NewDataObject(ADDON_NAME, {
 })
 
 function addon:OnInitialize()
+    self.db = LibStub("AceDB-3.0"):New("TrackStuffDB", {
+        profile = {
+            minimap = {
+                hide = false
+            }
+        }
+    })
     LibStub("LibDBIcon-1.0"):Register(ADDON_NAME, dataObject)
 end
 
